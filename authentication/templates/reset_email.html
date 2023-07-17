@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+</head>
+<body>
+    {% autoescape off %}
+    <p>To initiate the password reset process for your Account {{ user.email }},</p>
+    <p>click the link below:</p>
+    <br>
+    <p>{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}</p>
+    <br>
+    <br>
+    <p>If clicking the link above doesn't work, please copy and paste the URL in a new browserwindow instead.</p>
+    <br>
+    <br>
+    <br>
+
+    <p>Sincerely,</p>
+    <p>The Dementia Malaysia Team</p>
+    {% endautoescape %}  
+</body>
+</html>

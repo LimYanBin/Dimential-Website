@@ -1,0 +1,126 @@
+html {
+    height: 100%;
+  }
+
+  .message p {
+    font-family: sans-serif;
+    z-index: 1;
+    font-size: 20px;
+    color: red;
+    position: fixed;
+    left: 39.4%;
+    top: 64%;
+  }
+
+  body {
+    margin:0;
+    padding:0px;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+  }
+  
+  .signup-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 530px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-top: 40px;
+    padding-right: 50px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+  }
+
+  .signup-box h1 {
+    text-align: left;
+  }
+
+  .signup-box .container {
+    background-color: transparent;
+    text-align: inherit;
+    font: inherit;
+    appearance: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    position: relative;
+    width: 350px;
+    height: 35px;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .signup-box .user-box label {
+    position: relative;
+    top:0;
+    left: 0;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #ffffff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .signup-box .login-button p {
+    position: absolute;
+    font-size: 16px;
+    width: auto;
+    bottom: 0%;
+    right: 20%;
+  }
+
+  .signup-box .login-button a {
+    position: relative;
+    bottom: 0px;
+    color: #00c3ff;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .signup-box .signup-button button{
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    font: inherit;
+    border-radius: 0;
+    appearance: none;
+
+    position: absolute;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+    left: 33%;
+    bottom: 0%;
+  }
+
+  .signup-box .signup-button button:hover{
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+
+
+  

@@ -1,0 +1,205 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+  }
+
+  .message p{
+    font-family: sans-serif;
+    z-index: 1;
+    position: fixed;
+    left: 41.3%;
+    top: 44%;
+    font-size: 20px;
+    color: red;
+  }
+  
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 530px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+  .login-box .signup-button a {
+    position: relative;
+    color: #00c3ff;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .login-box .signup-button p {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    top: 200px;
+    text-align: center;
+  }
+
+  .login-box .forget-button p {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    top: 200px;
+  }
+
+  .login-box .forget-button a {
+    position: relative;
+    color: #00c3ff;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .login-box .login-button button{
+    background-color: transparent;
+    border: none;
+    text-align: inherit;
+    font: inherit;
+    appearance: none;
+
+    position: absolute;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    left: 35%;
+    bottom: 17%;
+  }
+  
+  .login-box .login-button button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+
+  .facebook-before {
+    position: relative;
+    background: #0064ab;
+    border-radius: 3px 0px 0px 3px;
+    color: #f4f4f4;
+    display: block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    top: 485px;
+    left: 805px;
+  }
+  
+  .facebook-before .facebook{
+    position: relative;
+    background: #0079ce;
+    border: none;
+    border-radius: 0px 3px 3px 0px;
+    color: #f4f4f4;
+    font-size: 16px;
+    cursor: pointer;
+    height: 50px;
+    text-transform: uppercase;
+    width: 250px;
+    left: 50px;
+  }
+
+  .facebook-image{
+    position: relative;
+    width: 2.5%;
+    top: 486px;
+    left: 756px;
+  }
+
+  .google-before {
+    position: relative;
+    background: rgb(160, 30, 30);
+    border-radius: 3px 0px 0px 3px;
+    display: block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    top: 495px;
+    left: 805px;
+  }
+  
+  .google-before .google{
+    position: relative;
+    background: red;
+    border: none;
+    border-radius: 0px 3px 3px 0px;
+    color: #f4f4f4;
+    font-size: 16px;
+    cursor: pointer;
+    height: 50px;
+    text-transform: uppercase;
+    width: 250px;
+    left: 50px;
+  }
+
+  .google-image{
+    position: relative;
+    width: 2.5%;
+    top: 496px;
+    left: 756px;
+    border-radius: 50%;
+    border-color: rgb(160, 30, 30);
+  }
+
+  
