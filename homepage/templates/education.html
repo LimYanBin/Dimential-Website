@@ -1,0 +1,350 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>Education</title>
+  <link href="{% static 'css/boot.info.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+  <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/info.js' %}"></script>
+</head>
+
+<body>
+  <style>
+    .sml-logo {
+      width: 12%;
+      height: 12%;
+    }
+
+    #progress-line {
+      --scrollAmount: 0%;
+      background: linear-gradient(to right, #6a82fb, #fc5c7d);
+      top: 0;
+      height: 12.5px;
+      position: fixed;
+      width: var(--scrollAmount);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 73%;
+      border: 3px solid black;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: none;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .highlighted-row {
+      background-color: rgb(117, 90, 238);
+    }
+
+    .lrg-logo {
+      font-size: 25px;
+      vertical-align: middle;
+      color: red;
+    }
+
+    .read-more-btn {
+      color: #0984e3;
+    }
+
+    .read-more-text {
+      display: none;
+    }
+
+    .read-more-text--show {
+      display: inline;
+    }
+  </style>
+
+  <div id="progress-line"></div>
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="text-muted" href="{% url 'myApp'%}">Dementia Malaysia</a> <img
+            src="https://nestainvestments.org.uk/wp-content/uploads/2015/01/hands-450x450.png" class="sml-logo"
+            alt="Logo">
+        </div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="#">For People Living With Dementia</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <input type="text" id="input" placeholder="Search..." onkeyup="search()">
+        </div>
+        <button id="readButton" onclick="toggleReadArticle()">Read Article</button>
+      </div>
+    </header>
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic paragraph">Dementia Malaysia Brain Hub</h1>
+        <p class="lead my-3 paragraph">Dementia Malaysia offers a range of education programs and sessions designed to support people living with dementia.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">Dementia Malaysia</strong>
+            <h3 class="mb-0">
+              <a class="text-dark paragraph">Dementia Malaysia Brain Hub</a>
+            </h3>
+            <div class="mb-1 text-muted paragraph text-muted">Selangor, SS15 11 to 15 September 2023</div>
+            <p class="card-text mb-auto paragraph">If you are impacted by dementia, Dementia Malaysia’s Brain Hubs can connect you to the information, education and support you need.</p>
+            <a href="{% url 'events' %}" target="_blank">Check out event</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-success">Dementia Malaysia</strong>
+            <h3 class="mb-0">
+              <a class="text-dark paragraph">Specialised Education Video</a>
+            </h3>
+            <div class="mb-1 text-muted paragraph">2022-2023</div>
+            <p class="card-text mb-auto paragraph">Dementia Malaysia have welcomed guest speakers to record a specialised education video for you to access.</p>
+              <p><br>Currently Available: <a href="https://www.youtube.com/watch?v=xLC4Y9Wq0E0&t=2s" target="_blank">Dementia Friendly Dental Care</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main role="main" class="container">
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Dementia Malaysia Program
+          </h3>
+          <article class="blog-post read-more-container">
+            <div class="views-row"><div about="/education/exploring-respite" id="taxonomy-term-9180" class="taxonomy-term vocabulary-event-product-types">
+                <div class="content">
+                <h2>
+                    <div class="field field--name-name field--type-string field--label-hidden field__item">Exploring Respite</div>
+                </h2>
+                <div class="field field--name-field-event-type-image field--type-image field--label-hidden field__item">  <a href="/education/exploring-respite" hreflang="en"><img loading="lazy" src="https://www.dementia.org.au/sites/default/files/styles/max_325x325/public/event-products/exploring-respite-landing_0.jpg?itok=ndic1fHl" width="320" height="240" alt="" typeof="foaf:Image" class="image-style-medium-square__220-x-220-" />
+              </a>
+              </div>
+                <div class="clearfix text-formatted field field--name-description field--type-text-long field--label-hidden field__item"><p>This session is about the process of considering respite services and preparing for them. It includes information about types of respite, how to access services, and strategies for preparing for respite. Participants will also be supported to recognise their emotions and share any concerns about respite.</p>
+                    <p>Dementia Malaysia’s facilitators have specialist dementia knowledge, skills and experience. This session is delivered interactively, you will be encouraged to share your experiences alongside other participants giving you an opportunity to develop new support networks. </p>
+                    <span class="read-more-text">
+                        <p><strong>Suitable for: </strong>People living with dementia and their family carers and family members. It is recommended that participants have previously attended an introductory session on dementia. </p>
+                        <p>This session can be delivered on behalf of aged care and disability service providers onsite to people living with dementia and their families. If you would like to discuss onsite delivery, please contact the Dementia Helpline on 1800 100 600.  </p>
+                      </span>
+                      <span class="read-more-btn">Read More...</span>
+                </div>       
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="views-row"><div about="/education/exploring-respite" id="taxonomy-term-9180" class="taxonomy-term vocabulary-event-product-types">
+                <div class="content">
+                <h2>
+                    <div class="field field--name-name field--type-string field--label-hidden field__item">Living With Dementia Program</div>
+                </h2>
+                <div class="field field--name-field-event-type-image field--type-image field--label-hidden field__item">  <a href="/education/exploring-respite" hreflang="en"><img loading="lazy" src="https://www.dementia.org.au/sites/default/files/styles/max_325x325/public/event-products/LivingWDP.jpg?itok=9JgFUgCt" width="320" height="240" alt="" typeof="foaf:Image" class="image-style-medium-square__220-x-220-" />
+              </a>
+              </div>
+                <div class="clearfix text-formatted field field--name-description field--type-text-long field--label-hidden field__item"><p>This program provides an overview of dementia and how to proceed after a diagnosis. It covers coping with change, relationships and communication, planning for the future and staying healthy.</p>
+                    <p>Dementia Malaysia's facilitators have specialist dementia knowledge, skills and experience. This program is delivered interactively, you will be encouraged to share your experiences alongside other participants giving you an opportunity to develop new support networks. </p>
+                    <p>You will gain knowledge in:</p>
+                    <ul>
+                        <li>Dementia and related issues such as planning for the future</li>
+                        <li>Strategies for living positively with dementia including support</li>
+                        <li>The management, reduction and/or prevention of behavioural and psychological symptoms of dementia.</li>
+                    </ul>
+                    <span class="read-more-text">
+                        <p><strong>Suitable for: </strong>People living with dementia and their family carers and family members.  </p>
+                    <p>This program is intended for people who have received a recent diagnosis and are in the early stages of living with dementia. This program is not suitable for people without a diagnosis or people living with dementia who do not acknowledge their diagnosis. </p>
+                    <p>If you register to attend this program you will be contacted by Dementia Australia staff to ensure that the program will meet your needs and that you meet the eligibility requirements. You will be required to attend multiple sessions or a block of time, and should be willing to participate in a workshop and therapeutic style environment. </p>
+                      </span>
+                    <span class="read-more-btn">Read More...</span>
+                </div>       
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="views-row"><div about="/education/exploring-respite" id="taxonomy-term-9180" class="taxonomy-term vocabulary-event-product-types">
+                <div class="content">
+                <h2>
+                    <div class="field field--name-name field--type-string field--label-hidden field__item">Mild Cognitive Impairment</div>
+                </h2>
+                <div class="field field--name-field-event-type-image field--type-image field--label-hidden field__item">  <a href="/education/exploring-respite" hreflang="en"><img loading="lazy" src="https://www.dementia.org.au/sites/default/files/styles/max_325x325/public/event-products/mind-cognitive-impairment.jpg?itok=AdPbvtyv" width="320" height="240" alt="" typeof="foaf:Image" class="image-style-medium-square__220-x-220-" />
+              </a>
+              </div>
+                <div class="clearfix text-formatted field field--name-description field--type-text-long field--label-hidden field__item"><p>This session provides information about mild cognitive impairment, including diagnosis, progression, treatment and management strategies.</p>
+                    <p>Dementia Malaysia's facilitators have specialist knowledge, skills and experience. This session is delivered interactively, you will be encouraged to share your experiences alongside other participants giving you an opportunity to develop new support networks. </p>
+                    <p>You will gain knowledge in:</p>
+                    <ul>
+                        <li>Mild cognitive impairment</li>
+                        <li>Strategies to assist with changes related to mild cognitive impairment</li>
+                        <li>Services and accessing support.</li>
+                    </ul>
+                    <span class="read-more-text">
+                        <p><strong>Suitable for: </strong>People diagnosed with mild cognitive impairment, people concerned about their cognition and their family carers and family members. </p>
+                        <p>This session is intended for people concerned about their own or someone else's cognitive impairment and people wanting to understand the difference between dementia and cognitive impairment.</p>
+                        <p>This session is not suitable for people living with dementia or people who do not acknowledge they have cognitive impairment.</p>
+                      </span>
+                    <span class="read-more-btn">Read More...</span>
+                </div>       
+                </div>
+              </div>
+            </div>
+            <hr>
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#" style="margin-right: 15px;">Return to top</a>
+                <a class="btn btn-outline-primary" href="#">Start Quiz</a>
+            </nav>
+        </div>
+    
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">About</h4>
+              <p class="mb-0">Our education sessions and programs are designed in response to the specific needs of all forms of dementia including Alzheimer’s disease, vascular dementia, Lewy body disease, frontotemporal dementia and younger onset dementia. The education programs focus on skills that support maintaining the independence and general wellbeing of people living with dementia in its various stages.</p>
+            </div>
+    
+            <div>
+              <h4 class="fst-italic">Upcoming Events</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'events' %}" target="_blank">
+                    <img src="https://www.dementia.org.au/sites/default/files/styles/article_feature/public/images/events/CarerWellnessProgramImage.jpg?itok=qBcGYnOz" width="45%" height="45%"> 
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Carer Wellness Program</h6>
+                      <small class="text-body-secondary">19 September 2023</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'events' %}" target="_blank">
+                    <img src="https://www.dementia.org.au/sites/default/files/styles/article_feature/public/2021-10/CommunicationandDementia.jpg?itok=ioh_4wWs" width="45%" height="45%"> 
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Communication and Dementia</h6>
+                      <small class="text-body-secondary">10 October 2023</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="blog-footer">
+    <p>© 2022–2023 Dementia Malaysia Ltd: <a class="text-reset fw-bold" href="{% url 'privacy' %}" target="_blank">Privacy</a></p>
+    <p>
+      <a href="{% url 'myApp' %}">Return to HomePage</a>
+    </p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=S6nMG4a7"></script>
+  <script>
+    Holder.addTheme('thumb', {
+      bg: '#55595c',
+      fg: '#eceeef',
+      text: 'Thumbnail'
+    });
+  </script>
+
+  <script type="text/javascript">
+    function search() {
+      let input = document.getElementById("input").value;
+      let paragraphs = document.getElementsByClassName("paragraph");
+
+      if (input !== "") {
+        let regExp = new RegExp(input, "gi");
+
+        for (let i = 0; i < paragraphs.length; i++) {
+          let content = paragraphs[i].textContent;
+          let highlightedContent = content.replace(regExp, '<mark style="background-color: #b9b9b9;">$&</mark>');
+          paragraphs[i].innerHTML = highlightedContent;
+        }
+      } else {
+        for (let i = 0; i < paragraphs.length; i++) {
+          paragraphs[i].innerHTML = paragraphs[i].textContent;
+        }
+      }
+    }
+
+    const parentContainer = document.querySelector('.read-more-container');
+
+    parentContainer.addEventListener('click', event => {
+      const current = event.target;
+      const isReadMoreBtn = current.className.includes('read-more-btn');
+      if (!isReadMoreBtn) return;
+
+      const currentText = event.target.parentNode.querySelector('.read-more-text');
+      currentText.classList.toggle('read-more-text--show');
+      current.textContent = current.textContent.includes('Read More') ? "Read Less..." : "Read More..."
+    })
+
+    let isReading = false;
+
+    function toggleReadArticle() {
+      const paragraphs = document.getElementsByClassName("paragraph");
+      const readButton = document.getElementById("readButton");
+
+      if (!isReading) {
+        readButton.textContent = "Stop Reading";
+
+        for (let i = 0; i < paragraphs.length; i++) {
+          const text = paragraphs[i].textContent;
+          responsiveVoice.speak(text);
+        }
+
+        isReading = true;
+      } else {
+        readButton.textContent = "Read Article";
+        responsiveVoice.cancel();
+
+        isReading = false;
+      }
+    }
+
+    function checkScroll() {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (scrollPosition >= pageHeight) {
+        const quizConfirmation = confirm("Do you want to start the quiz? Upon passing the quiz, you will receive a certificate.");
+        if (quizConfirmation) {
+          window.open("{% url 'myApp' %}", "_blank");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", checkScroll);
+  </script>
+</body>
+
+</html>

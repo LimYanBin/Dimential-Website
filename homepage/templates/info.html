@@ -1,0 +1,345 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>Information</title>
+  <link href="{% static 'css/boot.info.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+  <script src="{% static 'js/info.js' %}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+</head>
+
+<body>
+  <style>
+    .sml-logo {
+      width: 12%;
+      height: 12%;
+    }
+
+    #progress-line {
+      --scrollAmount: 0%;
+      background: linear-gradient(to right, #6a82fb, #fc5c7d);
+      top: 0;
+      height: 12.5px;
+      position: fixed;
+      width: var(--scrollAmount);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 73%;
+      border: 3px solid black;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: none;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .highlighted-row {
+      background-color: rgb(117, 90, 238);
+    }
+
+    .lrg-logo {
+      font-size: 25px;
+      vertical-align: middle;
+      color: red;
+    }
+
+    .read-more-btn {
+      color: #0984e3;
+    }
+
+    .read-more-text {
+      display: none;
+    }
+
+    .read-more-text--show {
+      display: inline;
+    }
+  </style>
+
+  <div id="progress-line"></div>
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="text-muted" href="{% url 'myApp'%}">Dementia Malaysia</a> <img
+            src="https://nestainvestments.org.uk/wp-content/uploads/2015/01/hands-450x450.png" class="sml-logo"
+            alt="Logo">
+        </div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="#">About dementia</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <input type="text" id="input" placeholder="Search..." onkeyup="search()">
+        </div>
+        <button id="readButton" onclick="toggleReadArticle()">Read Article</button>
+      </div>
+    </header>
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic paragraph">What is dementia?</h1>
+        <p class="lead my-3 paragraph">Dementia describes a collection of symptoms caused by disorders affecting the
+          brain. It is not one specific disease.</p>
+        <p class="lead mb-0"><a class="btn btn-lg btn-primary"
+            href="https://www.alz.org/alzheimers-dementia/what-is-dementia#:~:text=Dementia%20is%20a%20general%20term,About%20dementia"
+            class="text-white font-weight-bold" target="_blank">Continue reading</a></p>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">World Health Organization</strong>
+            <h3 class="mb-0">
+              <a class="text-dark paragraph">Dementia</a>
+            </h3>
+            <div class="mb-1 text-muted paragraph text-muted">15 March 2023</div>
+            <p class="card-text mb-auto paragraph">The illness gets worse over time. It mainly affects older people but
+              not all people will get it as they age.</p>
+            <a href="https://www.who.int/news-room/fact-sheets/detail/dementia" target="_blank">Continue reading</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-success">UK</strong>
+            <h3 class="mb-0">
+              <a class="text-dark paragraph">Dementia: applying All Our Health</a>
+            </h3>
+            <div class="mb-1 text-muted paragraph">22 February 2022</div>
+            <p class="card-text mb-auto paragraph">This guide is part of ‘All Our Health’, a resource that helps health
+              and care professionals prevent ill health and promote wellbeing as part of their everyday practice.</p>
+            <a href="https://www.gov.uk/government/publications/dementia-applying-all-our-health/dementia-applying-all-our-health"
+              target="_blank">Continue reading</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <div class="blog-post">
+          <h2 class="blog-post-title paragraph">How common is dementia?</h2>
+          <p class="blog-post-meta paragraph">December 8, 2022 by <a>NIH</a></p>
+
+          <p class="paragraph">Dementia is the loss of cognitive functioning — thinking, remembering, and reasoning — to
+            such an extent that it interferes with a person's daily life and activities.</p>
+          <p class="paragraph">Dementia affects millions of people and is more common as people grow older (about
+            one-third of all people age 85 or older may have some form of dementia) but it is <strong>not</strong> a
+            normal part of aging. Many people live into their 90s and beyond without any signs of dementia.</p>
+          <blockquote>
+            <p class="paragraph">Statistic had shown that at least 65 years of age, there is an estimated <strong>5.0
+                million adults with dementia in 2014</strong> and <strong>projected to be nearly 14 million by
+                2060.</strong></p>
+          </blockquote>
+        </div>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title paragraph">What increases the risk for dementia?</h2>
+          <p class="blog-post-meta paragraph">April 5, 2019 by <a>CDC</a></p>
+          <ul>
+            <li><strong>Age</strong></li>
+            <p class="paragraph">The strongest known risk factor for dementia is increasing age, with most cases
+              affecting those of 65 years and older.</p>
+            <li><strong>Family history</strong></li>
+            <p class="paragraph">Those who have parents or siblings with dementia are more likely to develop dementia
+              themselves.</p>
+            <li><strong>Race/ethnicity</strong></li>
+            <p class="paragraph">Older African Americans are twice more likely to have dementia than whites. Hispanics
+              1.5 times more likely to have dementia than whites.</p>
+            <li><strong>Poor heart health</strong></li>
+            <p class="paragraph">High blood pressure, high cholesterol, and smoking increase the risk of dementia if not
+              treated properly.</p>
+            <li><strong>Traumatic brain injury</strong></li>
+            <p class="paragraph">Head injuries can increase the risk of dementia, especially if they are severe or occur
+              repeatedly.</p>
+          </ul>
+        </div>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title paragraph">Difference between normal memory problems and dementia</h2>
+          <p class="blog-post-meta paragraph">October 21, 2020 by <a>NIH</a></p>
+          <div class="read-more-container">
+            <p class="paragraph">There are different forms of dementia, Alzheimer's disease is the most common form in
+              people over age 65. The table below explains some differences between normal signs of aging and
+              Alzheimer's.</p>
+            <caption><strong style="font-size: 1.150em;">Comparison between Normal Aging and Alzheimer's
+                Disease</strong>
+            </caption>
+            <table style="margin-top: 5px; margin-bottom: 17.5px;">
+              <tr class="highlighted-row">
+                <th> &emsp; &emsp; &emsp; &nbsp; Normal Aging</th>
+                <th> &emsp; &emsp; &nbsp; Alzheimer's Disease</th>
+              </tr>
+              <tr>
+                <td>Making a bad decision once in a while</td>
+                <td>Making poor judgments and decisions a lot of the time</td>
+              </tr>
+              <tr>
+                <td>Missing a monthly payment</td>
+                <td>Problems taking care of monthly bills</td>
+              </tr>
+              <tr>
+                <td>Forgetting which day it is and remembering it later</td>
+                <td>Losing track of the date or time of year</td>
+              </tr>
+              <tr>
+                <td>Sometimes forgetting which word to use</td>
+                <td>Trouble having a conversation</td>
+              </tr>
+              <tr>
+                <td>Losing things from time to time</td>
+                <td>Misplacing things often and being unable to find them</td>
+              </tr>
+            </table>
+            <span class="read-more-text">
+              <p class="paragraph"><strong><ion-icon name="alert-outline" class="lrg-logo"></ion-icon>Tips for dealing
+                  with forgetfulness</strong><br>People with some forgetfulness can use a variety of techniques that
+                <br>may help them stay healthy and deal with changes in their memory <br> and mental skills. Here are
+                some
+                tips:
+              </p>
+              <ul>
+                <li>Follow a daily routine.</li>
+                <li>Don't drink a lot of alcohol.</li>
+                <li>Spend time with friends and family.</li>
+                <li>Prevent or control high blood pressure.</li>
+                <li>Put your wallet or purse, keys, phone, and glasses in the same place each day.</li>
+              </ul>
+            </span>
+            <span class="read-more-btn">Read More...</span>
+          </div>
+        </div>
+        <hr>
+        <nav class="blog-pagination">
+          <a class="btn btn-outline-primary" href="#" style="margin-right: 15px;">Return to top</a>
+          <a class="btn btn-outline-primary" href="#">Start Quiz</a>
+        </nav>
+      </div>
+
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounded">
+          <h4 class="font-italic">About</h4>
+          <p class="mb-0">The information in this section defines how common is dementia, what increases the risk for
+            dementia and explains the difference between normal memory problems and dementia.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="blog-footer">
+    <p>© 2022–2023 Dementia Malaysia Ltd: <a class="text-reset fw-bold" href="{% url 'privacy' %}" target="_blank">Privacy</a></p>
+    <p>
+      <a href="{% url 'myApp' %}">Return to HomePage</a>
+    </p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=S6nMG4a7"></script>
+  <script>
+    Holder.addTheme('thumb', {
+      bg: '#55595c',
+      fg: '#eceeef',
+      text: 'Thumbnail'
+    });
+  </script>
+
+  <script type="text/javascript">
+    function search() {
+      let input = document.getElementById("input").value;
+      let paragraphs = document.getElementsByClassName("paragraph");
+
+      if (input !== "") {
+        let regExp = new RegExp(input, "gi");
+
+        for (let i = 0; i < paragraphs.length; i++) {
+          let content = paragraphs[i].textContent;
+          let highlightedContent = content.replace(regExp, '<mark style="background-color: yellow;">$&</mark>');
+          paragraphs[i].innerHTML = highlightedContent;
+        }
+      } else {
+        for (let i = 0; i < paragraphs.length; i++) {
+          paragraphs[i].innerHTML = paragraphs[i].textContent;
+        }
+      }
+    }
+
+    const parentContainer = document.querySelector('.read-more-container');
+
+    parentContainer.addEventListener('click', event => {
+      const current = event.target;
+      const isReadMoreBtn = current.className.includes('read-more-btn');
+      if (!isReadMoreBtn) return;
+
+      const currentText = event.target.parentNode.querySelector('.read-more-text');
+      currentText.classList.toggle('read-more-text--show');
+      current.textContent = current.textContent.includes('Read More') ? "Read Less..." : "Read More..."
+    })
+
+    let isReading = false;
+
+    function toggleReadArticle() {
+      const paragraphs = document.getElementsByClassName("paragraph");
+      const readButton = document.getElementById("readButton");
+
+      if (!isReading) {
+        readButton.textContent = "Stop Reading";
+
+        for (let i = 0; i < paragraphs.length; i++) {
+          const text = paragraphs[i].textContent;
+          responsiveVoice.speak(text);
+        }
+
+        isReading = true;
+      } else {
+        readButton.textContent = "Read Article";
+        responsiveVoice.cancel();
+
+        isReading = false;
+      }
+    }
+
+    function checkScroll() {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (scrollPosition >= pageHeight) {
+        const quizConfirmation = confirm("Do you want to start the quiz? Upon passing the quiz, you will receive a certificate.");
+        if (quizConfirmation) {
+          window.open("{% url 'myApp' %}", "_blank");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", checkScroll);
+  </script>
+</body>
+
+</html>

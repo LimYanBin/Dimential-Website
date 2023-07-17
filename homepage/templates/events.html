@@ -1,0 +1,269 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Events Calender</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="{% static 'css/event.css' %}" as="style" />
+    <link rel="stylesheet" href="{% static 'css/event1.css' %}" data-n-g="" /><noscript
+        data-n-css=""></noscript>
+    <style
+        data-href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 100;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 200;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16aXw.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 100;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Uw9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 200;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Ew9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Ew9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w9.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC70w9.woff) format('woff')
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(187, 113, 8);">
+    <div id="__next" data-reactroot="">
+        <main>
+            <header class="relative">
+                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+                <div class="mx-auto">
+                    <div class="relative shadow-xl sm:overflow-hidden">
+                        <div class="absolute inset-0"><img alt="Coffee grinder" sizes="100vw"         
+                                src="https://media.istockphoto.com/id/1130230765/photo/caregiver-carer-hand-holding-elder-hand-woman-in-hospice-care-philanthropy-kindness-to.jpg?s=612x612&w=0&k=20&c=qRJR6fHoJgCaWQ8wPEFy1iVOA7eOg-9gXC7REhUksa0=" decoding="async"
+                                data-nimg="future-fill" class="h-full w-full object-cover"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" />
+                            <div class="absolute inset-0 bg-orange-100 mix-blend-multiply"></div>
+                        </div>
+                        <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                            <p
+                                class="relative left-0 right-0 mx-auto mt-5 max-w-xl text-center text-xl font-semibold uppercase tracking-wide text-orange-600">
+                                Upcoming Events</p>
+                            <h1
+                                class="mt-1 text-center font-bold uppercase text-gray-900 sm:text-5xl sm:tracking-tight lg:text-7xl">
+                                <span class="block text-white">Our events calendar is</span><span
+                                    class="block text-orange-500">updated</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                <div class="sm:py-15 mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <p
+                            class="mt-1 text-4xl font-bold uppercase text-gray-900 sm:text-5xl sm:tracking-tight lg:text-5xl">
+                            Events Calendar</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                    <a class="group" href="{% url 'careevent' %}" target="_blank">
+                        <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                            <img alt="" sizes="100vw"
+                              src="https://www.dementia.org.au/sites/default/files/styles/article_feature/public/images/events/CarerWellnessProgramImage.jpg?itok=qBcGYnOz"
+                              decoding="async" data-nimg="future-fill"
+                              class="object-cover duration-700 ease-in-out group-hover:opacity-75 scale-110"
+                              loading="lazy"
+                              style="position:absolute; width: 96%; height: 96%; left: 0; top: 0; right: 0; bottom: 0; color: transparent;" />
+                          </div>
+                        <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
+                            <h3 style="margin-bottom: 20px;"><strong>Carer Wellness Program</strong></h3>
+                        </div>
+                        <p class="mt-1 text-sm italic">This group session is designed to support positive health and wellbeing outcomes for a carer, family or friend of a person living with dementia.</p>
+                        <br>
+                        <p><strong>Date: 19 September 2023<br>&ensp; &ensp; &emsp; &nbsp;9.30am-3.00pm</strong></p>
+                    </a>
+                    <a class="group" href="{% url 'communicationevent' %}" target="_blank">
+                        <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                            <img alt="" sizes="100vw"
+                              src="https://www.dementia.org.au/sites/default/files/styles/article_feature/public/2021-10/CommunicationandDementia.jpg?itok=ioh_4wWs"
+                              decoding="async" data-nimg="future-fill"
+                              class="object-cover duration-700 ease-in-out group-hover:opacity-75 scale-110"
+                              loading="lazy"
+                              style="position:absolute; width: 96%; height: 96%; left: 0; top: 0; right: 0; bottom: 0; color: transparent;" />
+                          </div>
+                        <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
+                            <h3 style="margin-bottom: 20px;"><strong>Communication and Dementia</strong></h3>
+                        </div>
+                        <p class="mt-1 text-sm italic">The session provides information on dementia, the way we communicate and how changes in communication can occur as a result of dementia.</p>
+                        <br>
+                        <p><strong>Date: 10 October 2023<br>&ensp; &ensp; &emsp; &nbsp;2.00pm-4.30pm</strong></p>
+                    </a>
+                    <a class="group" href="https://www.eventbrite.com.au/e/grief-loss-and-dementia-hamilton-nsw-registration-637785663087?aff=DAwebsite&_ga=2.148250103.1538730520.1689303953-933980289.1689303953" target="_blank">
+                        <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                            <img alt="" sizes="100vw"
+                              src="https://www.dementia.org.au/sites/default/files/styles/article_feature/public/2021-10/GriefLossAD.jpg?itok=O_7XQzop"
+                              decoding="async" data-nimg="future-fill"
+                              class="object-cover duration-700 ease-in-out group-hover:opacity-75 scale-110"
+                              loading="lazy"
+                              style="position:absolute; width: 96%; height: 96%; left: 0; top: 0; right: 0; bottom: 0; color: transparent;" />
+                          </div>
+                        <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
+                            <h3 style="margin-bottom: 20px;"><strong>Grief, Loss and Dementia</strong></h3>
+                        </div>
+                        <p class="mt-1 text-sm italic" style="margin-bottom: 20px;">This session provides an overview of the grief, loss and emotional impact of the changes caused by dementia.</p>
+                        <br>
+                        <p><strong>Date: 15 October 2023<br>&ensp; &ensp; &emsp; &nbsp;10.00am-12.30pm</strong></p>
+                    </a>
+                    <a class="group" href="https://www.eventbrite.com.au/e/understanding-dementia-kurri-kurri-nsw-registration-637674400297?aff=DAwebsite&_ga=2.148666871.1538730520.1689303953-933980289.1689303953" target="_blank">
+                        <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                            <img alt="" sizes="100vw"
+                              src="https://www.dementia.org.au/sites/default/files/styles/article_feature/public/2020-06/nat-cs-client-da-image-24-understanding-dementia-for-clients.jpg?itok=AscefTCr"
+                              decoding="async" data-nimg="future-fill"
+                              class="object-cover duration-700 ease-in-out group-hover:opacity-75 scale-110"
+                              loading="lazy"
+                              style="position:absolute; width: 96%; height: 96%; left: 0; top: 0; right: 0; bottom: 0; color: transparent;" />
+                          </div>
+                        <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
+                            <h3 style="margin-bottom: 20px;"><strong>Understanding Dementia</strong></h3>
+                        </div>
+                        <p class="mt-1 text-sm italic">This session provides an introduction to dementia including an overview of different types of dementia, diagnosis and planning ahead.</p>
+                        <br>
+                        <p><strong>Date: 5 November 2023<br>&ensp; &ensp; &emsp; &nbsp;10.00am-12.30pm</strong></p>
+                    </a>
+                    </div>
+            </div>
+        </main>
+        <footer class="center mt-5 flex justify-center space-x-4 bg-[#E7E8EF] p-4 text-xs">
+            <p>© 2022–2023 Dementia Malaysia Ltd: <a class="text-reset fw-bold" href="{% url 'privacy' %}" target="_blank">Privacy</a></p>
+            <p>
+                <a href="{% url 'myApp' %}">Return to HomePage</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
