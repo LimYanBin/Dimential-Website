@@ -40,7 +40,7 @@
     .search-bar {
       position: relative;
       margin-top: 17.5px;
-      right: 150px;
+      right: 100px;
     }
 
     .lg {
@@ -143,6 +143,7 @@
         opacity: 1;
       }
     }
+
   </style>
 
   <header data-bs-theme="dark">
@@ -212,20 +213,29 @@
             <input id="searchInput" class="form-control me-2 search-bar" type="search" class="navbar"
               placeholder="Search" aria-label="Search" name="q" values="" autocomplete="off">
           </form>
+
+          <div class="username">
+            <p style="color: white;font-size: 25px; position: relative; right: 60px; top: 10px;">
+              Welcome,
+              {{user.username}}
+            </p>
+          </div>
+
+
           <div class="btn-group">
             <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split spr-button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="sr-only"><ion-icon name="person-outline" class="p-logo"></ion-icon>&nbsp;Profile</span>
             </button>
             <div class="dropdown-menu sub-menu-wrap">
-              <a class="dropdown-item lg" href="#"><ion-icon name="person-outline"></ion-icon> &nbsp; &nbsp;Edit
+              <a class="dropdown-item lg" href="{% url 'edit_profile' %}"><ion-icon name="person-outline"></ion-icon> &nbsp; &nbsp;Edit
                 Profile<span>&emsp; &emsp; &emsp; &ensp;></span></li>
                 <a class="dropdown-item lg" href="#"><ion-icon name="settings-outline"></ion-icon> &nbsp; &nbsp;Settings
                   & Privacy<span>&nbsp; &nbsp; &nbsp;></span></a>
                 <a class="dropdown-item lg" href="{% url 'contactpage' %}" ><ion-icon name="help-circle-outline"></ion-icon> &nbsp; &nbsp;Help
                   & Support<span>&emsp; &ensp; &nbsp;></span></a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item lg" href="#"><ion-icon name="log-out-outline"></ion-icon> &nbsp;
+                <a class="dropdown-item lg" href="{% url 'logoutUser' %}"><ion-icon name="log-out-outline"></ion-icon> &nbsp;
                   &nbsp;Logout</a>
             </div>
           </div>
@@ -475,7 +485,7 @@
                 Lumpur <br> &emsp; &emsp; &emsp; &emsp; &nbsp; Malaysia</p>
               <p>
                 <i class="fas fa-envelope me-3"></i>
-                Email: dementiaMy@dementia.org
+                Email: dementiamalaysia666@gmail.com
               </p>
             </div>
           </div>

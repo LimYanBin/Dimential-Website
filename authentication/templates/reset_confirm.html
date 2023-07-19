@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'reset_confirm.css' %}">
+    <title>Reset Confirm</title>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Reset Password</h1>
+        <p>Please enter your new password twice so we can verify you typed it in correctly.</p>
+        {% if validlink %}
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="form1">
+                {{ form.new_password1.errors }}
+                <label for="id_new_password1"> New password:</label>
+                <div class="container">
+                    {{ form.new_password1 }}
+                </div>
+                
+            </div>
+            <div class="form2">
+                {{ form.new_password2.errors }}
+                <label for="id_new_password2">Confirm password:</label>
+                <div class="container">
+                    {{ form.new_password2 }}
+                </div>
+            </div>
+            <button type="submit">Change my password</button>
+        </form>
+        
+        {% else %}
+        <p>The password reset link was invalid, possibly because it has already been used.  Please request a new password reset.</p>
+        <a href="{% url 'loginPage' %}">Back to Login</a>
+        
+        {% endif %}
+    </div>
+
+</body>
+</html>
+
+

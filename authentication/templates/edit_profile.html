@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'edit_profile.css' %}">
+    <title>Edit Profile</title>
+</head>
+<body>
+
+    <div class="pic-box">
+        <!-- Profile picture card-->
+        <div class="card-header">Profile Picture</div>
+        <!-- Profile picture image-->
+        
+        {% if user.profile.image %}
+            <img class="pic" src="{{ user.profile.image.url }}" alt="Profile Picture">
+        {% else %}
+            <img class="pic" src="{% static 'default.jpg' %}" alt="Default Profile Picture">
+        {% endif %}        
+
+        <!-- Profile picture upload button-->
+        <button class="btn1" type="button" >
+            <a href="{%url 'edit_profile_image'%}">Upload new image </a>
+        </button>
+        
+    </div>
+
+    <div class="info-box">
+        <!-- Account details card-->
+        <div class="card-header">Change Account Details</div>
+            <div class="message">
+                {% for message in messages %}
+                <p id="messages">{{message}}</p>
+                {% endfor %}
+            </div>
+
+            <form method="post">
+            {% csrf_token %}
+                <!-- Form Group (username)-->
+                <div class="username">
+                    <label>Username</label>
+                    <input class="form-control" name="username" type="text" value = {{user.username}}>
+                </div>
+
+                <!--Change passwordd form-->
+                <div class="pass">
+                    <label>New Password</label>
+                    <input class="form-control" name="oldpass" type="password">
+                </div>
+
+                <div class="pass">
+                    <label>Confirm New Password</label>
+                    <input class="form-control" name="newpass1" type="password">
+                </div>
+
+                <div class="pass">
+                    <label>Confirm New Password</label>
+                    <input class="form-control" name="newpass2" type="password">
+                </div>
+                <!-- Save changes button-->
+                <button class="btn2" type="submit">Save changes</button>
+            </form>
+    </div>
+    <button class="btn3" type="button">
+        <a href="{% url 'myApp'%}">Homepage</a>
+    </button>
+</body>
+</html>

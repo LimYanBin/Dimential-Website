@@ -1,0 +1,151 @@
+body{margin-top:30px;
+    background-color:#f2f6fc;
+    color:#69707a;
+    font-family: sans-serif;
+    }
+
+    .message p{
+        font-family: sans-serif;
+        z-index: 1;
+        font-size: 25px;
+        color: red;
+      }
+
+    .pic-box {
+        position: fixed;
+        left: 50px;
+        padding: 20px 20px 20px 20px;
+        height: 90%;
+        width: 450px;
+        color: #69707a;
+        background-color: #9df8f8;
+        background-clip: padding-box;
+        border: 1px solid #c5ccd6;
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+    }
+    .pic-box .card-header {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .pic {
+        border-radius: 0%;
+        position: fixed;
+        left: 180px;
+        top: 130px;
+        width: 250px;
+        height: 220px;
+    }
+
+    .text {
+        position: relative;
+        font-size: 20px;
+        left: 100px;
+        top: 300px;
+    }
+
+    .btn1 {
+        background-color: rgb(197, 171, 171);
+        
+
+        position: fixed;
+        padding: 10px 20px;
+        left: 195px;
+        top: 400px;
+        border-radius: 5%;
+        border: none;
+    }
+
+    .btn1 a{
+        text-align: inherit;
+        font: inherit;
+        text-decoration: none;
+        appearance: none;
+        color: #000000;
+        font-size: 20px;
+    }
+
+    .upload {
+        position: fixed;
+        left: 195px;
+        top: 300px;
+        font-size: 18px;
+    }
+
+    /*Account Detials*/
+
+    .info-box{
+        position: fixed;
+        padding: 20px 20px 20px 40px;
+        left: 30%;
+        height: 90%;
+        width: 65%;
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+        background-color: rgb(128, 219, 223);
+
+    }
+    
+    .info-box .card-header {
+        font-size: 50px;
+    }
+
+
+    .info-box .form-control{
+        display: block;
+        background-color: white;
+        text-align: inherit;
+        font: inherit;
+        padding: 5px 5px 5px 10px;
+
+        position: relative;
+        width: 80%;
+        height: 35px;
+        margin-bottom: 30px;
+        margin-top: 10px;
+        color: #000000;
+        font-size: 18px;
+    }
+
+     .btn2{
+        background-color: rgb(197, 171, 171);
+        text-align: inherit;
+        font: inherit;
+
+        position: relative;
+        padding: 10px 20px;
+        color: #000000;
+        font-size: 20px;
+        border-radius: 5%;
+        margin-top: 20px;
+        border: none;
+    }
+
+    .btn3{
+        background-color: rgb(197, 171, 171);
+        text-align: inherit;
+        font: inherit;
+
+        position: fixed;
+        padding: 10px 20px;
+        color: #000000;
+        font-size: 20px;
+        left: 1100px;
+        top: 850px;
+        border-radius: 5%;
+        border: none;
+    }
+
+    .btn3 a{
+        text-decoration: none;
+        color: #000000;
+    }
+
+    button:hover {
+        background: #ff0000;
+        color: #000000;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #f32a55,
+                    0 0 25px #f32a55,
+                    0 0 50px #f32a55,
+                    0 0 100px #f32a55;
+      }

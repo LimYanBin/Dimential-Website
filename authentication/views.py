@@ -1,18 +1,19 @@
 from django.contrib import messages
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import EmailMessage
 from django.conf import settings
-from .tasks import send_email_task as task
+from django.contrib.auth.decorators import login_required
+from .forms import ImageForm
+from .models import Profile
 
 
 #class
-from .forms import CreateUserForm 
+from .forms import CreateUserForm
 
 @csrf_exempt    
 def signupPage(request) :
@@ -21,6 +22,7 @@ def signupPage(request) :
         form = CreateUserForm (request.POST)
         email = request.POST['email']
         username = request.POST['username']
+
 
         if form.is_valid():
             form.save()
@@ -33,7 +35,7 @@ def signupPage(request) :
             receiver = [email]
             message = EmailMessage(subject, html_message, email_from, receiver)
             message.content_subtype = 'html'
-            message.send()
+            #message.send()
 
             return redirect('loginPage')
         
@@ -57,7 +59,7 @@ def loginPage(request) :
 
             if user is not None:
                 login(request, user)
-                return redirect(reverse('homePage'))
+                return redirect(reverse('myApp'))
             else :
                 messages.success(request, ('There was an error logging'))
                 return redirect('loginPage')
@@ -68,6 +70,60 @@ def loginPage(request) :
 def logoutUser(request) :
     logout(request)
     return redirect('loginPage')
+
+@csrf_exempt
+@login_required(login_url='loginPage')
+def edit_profile(request) :
+
+    if request.method=='POST' :
+
+        username = request.POST['username']
+        oldpass = request.POST['oldpass']
+        newpass1 = request.POST['newpass1']
+        newpass2 = request.POST['newpass2']
+        user = User.objects.get (id=request.user.id)
+
+        if username == request.user.username :
+            pass
+
+        else :
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'Username already exist')
+
+            else :
+                user.username = username
+                user.save()
+                messages.info(request, 'Username had changed to ' +username)
+                return redirect('edit_profile')
+            
+        #not empty    
+        if len(oldpass.strip()) & len(newpass1.strip()) & len(newpass2.strip()) :
+            if (oldpass == oldpass) & (newpass1 == newpass2):
+                messages.info(request, 'Password had changed successfully')
+
+            else :
+                messages.info(request, 'Invalid action')
+        else :
+            messages.info(request, 'Invalid action')
+
+
+    context = {}
+    return render(request, 'edit_profile.html', context)
+
+@csrf_exempt
+@login_required(login_url='loginPage')
+def edit_profile_image(request) :
+    form =ImageForm(request.POST, request.FILES, instance=request.user.profile)
+
+    if request.method=='POST' :
+
+        if form.is_valid() :
+            form.save()
+            return redirect('edit_profile')
+
+    context = {'form': form}
+    return render(request, 'edit_profile_image.html', context)
+
 
 
 

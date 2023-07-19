@@ -182,7 +182,7 @@ iframe {
     font-family: Poppins-Regular;
     font-size: 15px;
     line-height: 1.6;
-    color: #999
+    color: white
 }
 
 .txt3 {
@@ -190,6 +190,10 @@ iframe {
     font-size: 15px;
     line-height: 1.6;
     color: #00ad5f
+}
+
+.txt3 .__cf_email__ {
+    color: white
 }
 
 .size1 {

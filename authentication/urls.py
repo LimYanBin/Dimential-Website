@@ -7,6 +7,9 @@ urlpatterns = [
     path('', views.loginPage, name='loginPage'),
     path('signupPage/', views.signupPage, name='signupPage'),
     path('logoutUser/', views.logoutUser, name='logoutUser'),
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
+    path('edit_profile_image/', views.edit_profile_image, name='edit_profile_image'),
+
 
     #profile
 
@@ -26,7 +29,7 @@ urlpatterns = [
 
     path(
         "reset/<uidb64>/<token>/",
-        auth_views.PasswordResetConfirmView.as_view(),
+        auth_views.PasswordResetConfirmView.as_view(template_name="reset_confirm.html"),
         name="password_reset_confirm",
     ),
 

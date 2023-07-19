@@ -1,0 +1,132 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+.box {
+    position: relative;
+    bottom: -400px;
+    left: 50%;
+    width: 620px;
+    height: 450px;
+    padding: 40px;
+    padding-top: 10px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+
+.box h1{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.box p{
+    position: relative;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+}
+
+.box a {
+    position: relative;
+    padding: 5px 10px;
+    background-color: rgb(209, 10, 10);
+    border-radius: 5%;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    left: 33%;
+    top: 30%;
+}
+
+.box .form1 label{
+    position: relative;
+    top:0;
+    left: 0;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.box .form2 label{
+    position: relative;
+    top:0;
+    left: 0;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.box .form1 ul.errorlist {
+    margin: 0 0 4px;
+    padding: 15px;
+    color: red;
+}
+
+.box .form2 ul.errorlist {
+    margin: 0 0 4px;
+    padding: 15px;
+    color: red;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField {
+    border: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 4px;
+    padding: 5px 6px;
+    margin-top: 10px;
+    color: white;
+    width: 450px;
+    background-color: #141e30;
+    font-size: 20px;
+}
+
+.box button{
+    background-color: transparent;
+    font: inherit;
+    appearance: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    text-decoration: none;
+
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+
+    position: absolute;
+    font-size: 20px;
+    bottom: 10px;
+    left: 28%;
+}
+
+.box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+
+

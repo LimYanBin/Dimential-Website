@@ -12,6 +12,12 @@ Services and package needed
 2. pip install social-auth-app-django
 3. pip install redis
 4. pip install celery django-celery-beat
+5. pip install ngrok
+6. pip install Pillow
+
+Start server
+1. manage.py runserver
+2. ngrok http 8000
 
 How to use redis
 1. github.redis.release
@@ -32,5 +38,9 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/LimYanBin/IWD.git
 git push -u origin main
+
+Github Update
+1. git status
+2. git push
 
 
