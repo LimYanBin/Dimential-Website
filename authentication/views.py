@@ -28,14 +28,14 @@ def signupPage(request) :
             form.save()
             messages.success(request, 'Account was created for ' + username)
 
-            html_template = 'gmail.html'
+            html_template = 'email.html'
             html_message = render_to_string(html_template)
             subject = "Welcome to Dementia Malaysia"
             email_from = settings.EMAIL_HOST_USER
             receiver = [email]
             message = EmailMessage(subject, html_message, email_from, receiver)
             message.content_subtype = 'html'
-            #message.send()
+            message.send()
 
             return redirect('loginPage')
         
