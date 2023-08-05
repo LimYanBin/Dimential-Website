@@ -26,6 +26,7 @@ urlpatterns = [
     path('homepage/', include('homepage.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('accounts/', include('allauth.urls')),
+    path('quiz/', include('quizes.urls', namespace='quizes')),
 ]
 
 #image

@@ -28,7 +28,7 @@ def signupPage(request) :
             form.save()
             messages.success(request, 'Account was created for ' + username)
 
-            html_template = 'email.html'
+            html_template = 'gmail.html'
             html_message = render_to_string(html_template)
             subject = "Welcome to Dementia Malaysia"
             email_from = settings.EMAIL_HOST_USER
@@ -103,8 +103,6 @@ def edit_profile(request) :
 
             else :
                 messages.info(request, 'Invalid action')
-        else :
-            messages.info(request, 'Invalid action')
 
 
     context = {}

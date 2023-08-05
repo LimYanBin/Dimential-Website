@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Certificate Generator</title>
+</head>
+
+<style>
+    body{
+        background-image: url('{%static "quizes/cert.svg" %}');;
+    }
+    .container{
+        background-color: rgb(14, 35, 64);
+        border-radius: 20px;
+        padding: 20px;
+        filter: drop-shadow(0.40em 0.40em 0.5em rgba(97, 96, 96, 0.6));
+    }
+
+    .titleee{
+        background-color: rgb(14, 35, 64);
+        color:white;
+        padding: 20px;
+        margin-bottom: 30px;
+
+    }
+
+    .btn{
+        background-color: rgb(14, 35, 64);
+        color: white;
+        margin-bottom: 20px;
+        margin-left: 70px;
+        
+        padding: 10px;
+    }
+
+</style>
+
+<body>
+    <div class="titleee">
+        <h1><block>Congratulations!</block></h1>
+        <p><b>You have successfully completed the quiz!</b></p>
+    </div>
+
+    <div class="container">
+        <canvas id="canvas" height="900px" width="1100px"></canvas>
+        <h2 
+        id="name" 
+        user-id="{{ user.username }}"
+        contents=" has sucessfullly completed the Dementia Malaysia Quiz {{quiz_name}} level "
+        sig="LAWFOONGLI"
+        datee="Certificate Issued on: {{ date }}"
+        >
+        </h2>
+    </div>
+    <button id="saveCertificateButton" class="btn">Download</button>
+
+     <script>
+        var canvas = document.getElementById('canvas')
+        var ctx = canvas.getContext('2d')
+        var nameInput = document.getElementById('name')
+        var downloadBtn = document.getElementById('saveCertificateButton')
+
+        var image = new Image()
+        image.src = "{% static 'quizes/certificate2.jpg' %}";
+        image.onload = function(){
+	        drawImage()
+            drawImage1()
+        }
+
+    function drawImage(){
+	    ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
+        const userName = nameInput.getAttribute('user-id')
+        const cont = nameInput.getAttribute('contents')
+        const signature = nameInput.getAttribute('sig')
+        ctx.font = '70px sans-serif'
+        ctx.fillStyle = 'black'
+        ctx.fillText(userName, 400, 420)
+
+        ctx.font = '25px inter'
+        ctx.fillStyle = 'brown'
+        ctx.fillText(cont, 170, 520)
+
+        ctx.font = '23px Verdana'
+        ctx.fillStyle = 'brown'
+        ctx.fillText(signature, 170, 720)
+    }
+
+
+    downloadBtn.addEventListener('click', function () {
+    var downloadLink = document.createElement('a')
+    downloadLink.href = canvas.toDataURL('image/png')
+    var fileName = 'certificate.png'
+    downloadLink.download = fileName
+    document.body.appendChild(downloadLink)
+    downloadLink.click()
+    document.body.removeChild(downloadLink)
+
+    })
+
+     </script>
+</body>
+
+</html>

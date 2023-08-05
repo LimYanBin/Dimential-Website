@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     #my module
     'homepage',
     'authentication',
+    "quizes",
+    "questions",
+    "results",
     
     #Third party app
     'social_django',
@@ -208,5 +211,15 @@ CELERY_BEAT_SCHEDULE = {
 #image
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+#google maps apig
+GOOGLE_API_KEY = 'AIzaSyBnEz7Ad-4J77ek9cHhUycS7guGLpE8ehY'
+
+RECAPTCHA_KEY = '6LdM0WQnAAAAAKgMhgTNdfWqzq1ECZWyDjeF0E81'
+
+RECAPTCHA_SECRET_KEY = '6LdM0WQnAAAAAM-rbJA53kAraknEFPgkd0pDYvUf'
+
+
 
 
