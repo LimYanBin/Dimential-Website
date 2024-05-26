@@ -31,18 +31,3 @@ Schedule Email
 1. celery -A assignment worker -P solo -l info
 2. celery -A assignment beat -l info
 
-Github command
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/LimYanBin/IWD.git
-git push -u origin main
-
-Github Update
-1. git status
-
-Gmail account
-dementialmalaysia666@gmail.com
-password: dementialmalaysia
-
